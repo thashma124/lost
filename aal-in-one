@@ -1,0 +1,655 @@
+<!-- ===== NAVBAR (shared across all pages) ===== -->
+<nav class="navbar navbar-expand-lg fixed-top glass-nav" id="mainNavbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse d-none d-lg-flex">
+      <ul class="navbar-nav mx-auto gap-3">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="lost-items.html">Lost Items</a></li>
+        <li class="nav-item"><a class="nav-link" href="found-items.html">Found Items</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <button class="icon-btn" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <a href="notifications.html" class="icon-btn position-relative"><i class="fa-solid fa-bell"></i><span class="notif-dot"></span></a>
+        <a href="login.html" class="btn btn-outline-brand">Login</a>
+        <a href="register.html" class="btn btn-brand">Register</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Offcanvas Menu -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <span class="navbar-brand"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></span>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="nav flex-column gap-2">
+      <li><a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a></li>
+      <li><a class="nav-link" href="lost-items.html"><i class="fa-solid fa-box-open"></i> Lost Items</a></li>
+      <li><a class="nav-link" href="found-items.html"><i class="fa-solid fa-hand-holding-heart"></i> Found Items</a></li>
+      <li><a class="nav-link" href="gallery.html"><i class="fa-solid fa-images"></i> Gallery</a></li>
+      <li><a class="nav-link" href="faq.html"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+      <li><a class="nav-link" href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+    </ul>
+    <div class="d-grid gap-2 mt-4">
+      <a href="login.html" class="btn btn-outline-brand">Login</a>
+      <a href="register.html" class="btn btn-brand">Register</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER (shared across all pages) ===== -->
+<footer class="site-footer">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <span class="navbar-brand"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></span>
+        <p class="mt-3 text-muted-light">A secure college platform helping students and staff recover lost belongings quickly and reliably.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="social-icon"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Quick Links</h6>
+        <a href="index.html">Home</a><a href="about.html">About</a><a href="lost-items.html">Lost Items</a><a href="found-items.html">Found Items</a>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Support</h6>
+        <a href="help.html">Help Center</a><a href="faq.html">FAQ</a><a href="feedback.html">Feedback</a><a href="contact.html">Contact</a>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Legal</h6>
+        <a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms & Conditions</a>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Newsletter</h6>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email" required>
+          <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom text-center py-3">
+    <p class="mb-0">&copy; 2026 Lost & Found Management System — College Portal. All rights reserved.</p>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scrollTop"><i class="fa-solid fa-arrow-up"></i></button>
+<div class="loader" id="loader"><div class="loader-ring"></div></div>
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAGE TITLE | LOST&FOUND</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | LOST&FOUND</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader" id="loader"><div class="loader-ring"></div></div>
+
+<!-- NAVBAR (shared, see above) -->
+
+<!-- Hero -->
+<section class="hero-section d-flex align-items-center">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6" data-aos="fade-right">
+        <span class="badge-pill"><i class="fa-solid fa-star"></i> Trusted by 5,000+ Students</span>
+        <h1 class="hero-title">Lost Something? <span class="gradient-text">We'll Help You Find It.</span></h1>
+        <p class="hero-sub">A secure, campus-wide platform to report, track, and recover lost belongings — fast.</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a href="report-lost.html" class="btn btn-brand btn-lg"><i class="fa-solid fa-box-open"></i> Report Lost Item</a>
+          <a href="report-found.html" class="btn btn-outline-brand btn-lg"><i class="fa-solid fa-hand-holding-heart"></i> Report Found Item</a>
+        </div>
+      </div>
+      <div class="col-lg-6" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1584824486539-53bb4646bfdf?w=700&q=80" class="img-fluid rounded-4 shadow-lg" alt="Lost and found">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Statistics -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-md-3" data-aos="fade-up"><div class="glass-card stat-card"><i class="fa-solid fa-box-open"></i><h3 class="counter" data-target="1840">0</h3><p>Lost Items</p></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="glass-card stat-card"><i class="fa-solid fa-hand-holding-heart"></i><h3 class="counter" data-target="1120">0</h3><p>Found Items</p></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="glass-card stat-card"><i class="fa-solid fa-circle-check"></i><h3 class="counter" data-target="1240">0</h3><p>Returned Items</p></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="glass-card stat-card"><i class="fa-solid fa-hourglass-half"></i><h3 class="counter" data-target="86">0</h3><p>Pending Claims</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Search -->
+<section class="py-4">
+  <div class="container">
+    <div class="glass-card p-4" data-aos="zoom-in">
+      <form class="row g-3 align-items-end">
+        <div class="col-lg-4"><label class="form-label">Search</label><input type="text" class="form-control" placeholder="Search by item name..."></div>
+        <div class="col-lg-2"><label class="form-label">Category</label><select class="form-select"><option>All Categories</option><option>Electronics</option><option>Wallets</option><option>Keys</option><option>ID Cards</option></select></div>
+        <div class="col-lg-2"><label class="form-label">Date</label><input type="date" class="form-control"></div>
+        <div class="col-lg-2"><label class="form-label">Location</label><select class="form-select"><option>All Locations</option><option>Library</option><option>Cafeteria</option><option>Hostel</option></select></div>
+        <div class="col-lg-2"><button class="btn btn-brand w-100"><i class="fa-solid fa-magnifying-glass"></i> Search</button></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Lost Items -->
+<section class="py-5">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up"><span class="tag">Recently Lost</span><h2>Featured <span class="gradient-text">Lost Items</span></h2></div>
+    <div class="row g-4" id="featuredLost"></div>
+  </div>
+</section>
+
+<!-- Featured Found Items -->
+<section class="py-5 section-alt">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up"><span class="tag">Recently Found</span><h2>Featured <span class="gradient-text">Found Items</span></h2></div>
+    <div class="row g-4" id="featuredFound"></div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="py-5">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up"><h2>Browse by <span class="gradient-text">Category</span></h2></div>
+    <div class="row g-3">
+      <div class="col-6 col-md-3 col-lg-2"><div class="category-card"><i class="fa-solid fa-mobile-screen"></i><p>Electronics</p></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="category-card"><i class="fa-solid fa-wallet"></i><p>Wallets</p></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="category-card"><i class="fa-solid fa-key"></i><p>Keys</p></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="category-card"><i class="fa-solid fa-book"></i><p>Books</p></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="category-card"><i class="fa-solid fa-id-card"></i><p>ID Cards</p></div></div>
+      <div class="col-6 col-md-3 col-lg-2"><div class="category-card"><i class="fa-solid fa-ellipsis"></i><p>Others</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-5 section-alt">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up"><h2>What Students <span class="gradient-text">Say</span></h2></div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up"><div class="glass-card p-4"><p>"Got my ID card back within a day. This system is a lifesaver!"</p><h6 class="mt-3">Rhea Kapoor</h6></div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="glass-card p-4"><p>"Reporting a found laptop was quick and the finder got recognized too."</p><h6 class="mt-3">Aman Joshi</h6></div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="glass-card p-4"><p>"OTP verification made me feel safe claiming my wallet back."</p><h6 class="mt-3">Simran Kaur</h6></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-5">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up"><h2>Quick <span class="gradient-text">FAQs</span></h2></div>
+    <div class="accordion" id="homeFaq">
+      <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f1">How do I report a lost item?</button></h2><div id="f1" class="accordion-collapse collapse" data-bs-parent="#homeFaq"><div class="accordion-body">Go to Report Lost Item, fill in the form, and submit.</div></div></div>
+      <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#f2">Is claim verification secure?</button></h2><div id="f2" class="accordion-collapse collapse" data-bs-parent="#homeFaq"><div class="accordion-body">Yes, we use OTP, Student ID, and QR verification.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (shared, see above) -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true });</script>
+<script src="js/script.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | LOST&FOUND</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader" id="loader"><div class="loader-ring"></div></div>
+
+<!-- NAVBAR (shared) -->
+
+<!-- Page Header -->
+<section class="page-header d-flex align-items-center">
+  <div class="container text-center" data-aos="fade-up">
+    <span class="badge-pill"><i class="fa-solid fa-circle-info"></i> About Us</span>
+    <h1 class="hero-title">Reuniting People With What Matters <span class="gradient-text">Most</span></h1>
+    <p class="hero-sub mx-auto" style="max-width:600px;">A secure, campus-wide platform helping students and staff recover lost belongings quickly and reliably.</p>
+  </div>
+</section>
+
+<!-- Mission / Vision -->
+<section class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6" data-aos="fade-right">
+        <div class="glass-card p-4 h-100">
+          <div class="icon-badge"><i class="fa-solid fa-bullseye"></i></div>
+          <h3>Our Mission</h3>
+          <p>To give every student and staff member a fast, transparent way to report and recover lost belongings, reducing stress and building a culture of honesty across campus.</p>
+        </div>
+      </div>
+      <div class="col-md-6" data-aos="fade-left">
+        <div class="glass-card p-4 h-100">
+          <div class="icon-badge"><i class="fa-solid fa-eye"></i></div>
+          <h3>Our Vision</h3>
+          <p>To become the standard digital lost-and-found infrastructure for every institution, where no lost item goes unclaimed and verification is instant.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Objectives -->
+<section class="py-5 section-alt">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up"><span class="tag">Our Goals</span><h2>Core <span class="gradient-text">Objectives</span></h2></div>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up"><div class="glass-card p-4"><i class="fa-solid fa-bolt mb-2"></i><h5>Fast Recovery</h5><p>Cut recovery time from days to hours via smart matching.</p></div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="glass-card p-4"><i class="fa-solid fa-lock mb-2"></i><h5>Secure Claims</h5><p>Multi-step verification prevents false ownership claims.</p></div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="glass-card p-4"><i class="fa-solid fa-chart-line mb-2"></i><h5>Full Transparency</h5><p>Track every report status in real time, start to finish.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-5">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up"><span class="tag">Process</span><h2>How It <span class="gradient-text">Works</span></h2></div>
+    <div class="row g-4 text-center">
+      <div class="col-md-3" data-aos="fade-up"><div class="step-num">1</div><h6 class="mt-3">Report an Item</h6><p class="text-muted-light small">Submit lost/found details with photos.</p></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="step-num">2</div><h6 class="mt-3">Smart Matching</h6><p class="text-muted-light small">System matches by category & location.</p></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="step-num">3</div><h6 class="mt-3">Verify Ownership</h6><p class="text-muted-light small">OTP, ID, or security question checks.</p></div>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="step-num">4</div><h6 class="mt-3">Item Returned</h6><p class="text-muted-light small">Secure pickup, marked as returned.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="py-5 section-alt">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up"><span class="tag">Meet The Team</span><h2>The People Behind <span class="gradient-text">LOST&FOUND</span></h2></div>
+    <div class="row g-4">
+      <div class="col-6 col-md-3" data-aos="fade-up"><div class="glass-card p-4 text-center"><img src="https://randomuser.me/api/portraits/men/41.jpg" class="team-avatar" alt="Team"><h6 class="mt-3 mb-0">Aditya Rao</h6><span class="small text-muted-light">Lead Developer</span></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="glass-card p-4 text-center"><img src="https://randomuser.me/api/portraits/women/42.jpg" class="team-avatar" alt="Team"><h6 class="mt-3 mb-0">Sneha Iyer</h6><span class="small text-muted-light">UI/UX Designer</span></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="glass-card p-4 text-center"><img src="https://randomuser.me/api/portraits/men/43.jpg" class="team-avatar" alt="Team"><h6 class="mt-3 mb-0">Karan Mehta</h6><span class="small text-muted-light">Backend Engineer</span></div></div>
+      <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="glass-card p-4 text-center"><img src="https://randomuser.me/api/portraits/women/44.jpg" class="team-avatar" alt="Team"><h6 class="mt-3 mb-0">Priya Nair</h6><span class="small text-muted-light">Campus Coordinator</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (shared) -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true });</script>
+<script src="js/script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | LOST&FOUND</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader" id="loader"><div class="loader-ring"></div></div>
+
+<!-- NAVBAR (shared) -->
+
+<section class="page-header d-flex align-items-center">
+  <div class="container text-center" data-aos="fade-up">
+    <span class="badge-pill"><i class="fa-solid fa-envelope"></i> Get In Touch</span>
+    <h1 class="hero-title">Contact <span class="gradient-text">Us</span></h1>
+    <p class="hero-sub mx-auto" style="max-width:600px;">Have a question, concern, or feedback? We're here to help.</p>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <!-- Contact Cards -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-4" data-aos="fade-up"><div class="glass-card p-4 text-center"><i class="fa-solid fa-phone contact-icon"></i><h6>Call Us</h6><p class="text-muted-light">+91 98765 43210</p></div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100"><div class="glass-card p-4 text-center"><i class="fa-solid fa-envelope contact-icon"></i><h6>Email Us</h6><p class="text-muted-light">support@lostfound.edu</p></div></div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200"><div class="glass-card p-4 text-center"><i class="fa-solid fa-location-dot contact-icon"></i><h6>Visit Us</h6><p class="text-muted-light">Admin Block, Room 104, Main Campus</p></div></div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Contact Form -->
+      <div class="col-lg-6" data-aos="fade-right">
+        <div class="glass-card p-4 p-md-5">
+          <h4 class="mb-4">Send a Message</h4>
+          <form id="contactForm" novalidate>
+            <div class="mb-3"><label class="form-label">Full Name</label><input type="text" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Email Address</label><input type="email" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Subject</label><input type="text" class="form-control" required></div>
+            <div class="mb-3"><label class="form-label">Message</label><textarea class="form-control" rows="5" required></textarea></div>
+            <button type="submit" class="btn btn-brand w-100"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+          </form>
+        </div>
+      </div>
+      <!-- Map -->
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="glass-card p-2 h-100">
+          <div class="map-placeholder">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p>Google Maps Placeholder</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (shared) -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true });</script>
+<script src="js/script.js"></script>
+<script src="js/validation.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ | LOST&FOUND</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader" id="loader"><div class="loader-ring"></div></div>
+
+<!-- NAVBAR (shared) -->
+
+<section class="page-header d-flex align-items-center">
+  <div class="container text-center" data-aos="fade-up">
+    <span class="badge-pill"><i class="fa-solid fa-circle-question"></i> Got Questions?</span>
+    <h1 class="hero-title">Frequently Asked <span class="gradient-text">Questions</span></h1>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <!-- FAQ Search -->
+    <div class="row justify-content-center mb-5" data-aos="fade-up">
+      <div class="col-lg-6">
+        <div class="input-group input-group-lg glass-card p-2">
+          <span class="input-group-text bg-transparent border-0"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input type="text" id="faqSearch" class="form-control bg-transparent border-0" placeholder="Search FAQs...">
+        </div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion" id="fullFaq">
+          <div class="accordion-item faq-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q1">How do I report a lost item?</button></h2><div id="q1" class="accordion-collapse collapse" data-bs-parent="#fullFaq"><div class="accordion-body">Click "Report Lost Item", fill in your details and item description, and submit. You'll get updates as matches are found.</div></div></div>
+          <div class="accordion-item faq-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">How is my claim verified?</button></h2><div id="q2" class="accordion-collapse collapse" data-bs-parent="#fullFaq"><div class="accordion-body">Claims go through OTP verification, Student ID confirmation, or security questions before release.</div></div></div>
+          <div class="accordion-item faq-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">Is there a reward for returning items?</button></h2><div id="q3" class="accordion-collapse collapse" data-bs-parent="#fullFaq"><div class="accordion-body">Finders are recognized on their profile and can earn appreciation points redeemable for campus perks.</div></div></div>
+          <div class="accordion-item faq-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q4">What if no one claims a found item?</button></h2><div id="q4" class="accordion-collapse collapse" data-bs-parent="#fullFaq"><div class="accordion-body">Unclaimed items are held for 60 days, then handed to the campus administration office.</div></div></div>
+          <div class="accordion-item faq-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q5">Is my personal information private?</button></h2><div id="q5" class="accordion-collapse collapse" data-bs-parent="#fullFaq"><div class="accordion-body">Yes. Contact details are shared only between matched parties after claim verification is approved.</div></div></div>
+          <div class="accordion-item faq-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q6">Can staff use this system too?</button></h2><div id="q6" class="accordion-collapse collapse" data-bs-parent="#fullFaq"><div class="accordion-body">Yes, staff can register and report/claim items the same way students do.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (shared) -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>AOS.init({ duration: 700, once: true });</script>
+<script src="js/script.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | LOST&FOUND</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader" id="loader"><div class="loader-ring"></div></div>
+
+<div class="auth-topbar">
+  <a href="index.html" class="navbar-brand"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></a>
+  <div class="d-flex align-items-center gap-3">
+    <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    <button class="icon-btn" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</div>
+
+<div class="auth-wrapper">
+  <div class="auth-visual d-none d-lg-flex">
+    <i class="fa-solid fa-key auth-float-icon fi1"></i>
+    <i class="fa-solid fa-briefcase auth-float-icon fi2"></i>
+    <i class="fa-solid fa-mobile-screen auth-float-icon fi3"></i>
+    <i class="fa-solid fa-wallet auth-float-icon fi4"></i>
+    <div class="auth-visual-content text-center">
+      <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=500&q=80" class="img-fluid rounded-4 mb-4" alt="Welcome back">
+      <h2>Welcome Back!</h2>
+      <p>Sign in to track reports, view claim status, and get instant found-item alerts.</p>
+      <div class="visual-stats d-flex justify-content-center gap-4 mt-4">
+        <div class="text-center"><h3>5.2K+</h3><span>Users</span></div>
+        <div class="text-center"><h3>1.2K+</h3><span>Returned</span></div>
+        <div class="text-center"><h3>98%</h3><span>Satisfaction</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="auth-form-panel d-flex align-items-center justify-content-center">
+    <div class="auth-card glass-card p-4 p-md-5">
+      <div class="text-center mb-4">
+        <div class="icon-badge mx-auto"><i class="fa-solid fa-right-to-bracket"></i></div>
+        <h1 class="h3 mt-3">Sign In</h1>
+        <p class="text-muted-light">Access your Lost & Found dashboard</p>
+      </div>
+
+      <ul class="nav nav-pills role-toggle mb-4" role="tablist">
+        <li class="nav-item w-50"><button class="nav-link active w-100" data-bs-toggle="pill" data-bs-target="#studentLogin"><i class="fa-solid fa-user-graduate"></i> Student</button></li>
+        <li class="nav-item w-50"><button class="nav-link w-100" data-bs-toggle="pill" data-bs-target="#adminLogin"><i class="fa-solid fa-user-shield"></i> Admin</button></li>
+      </ul>
+
+      <div class="tab-content">
+        <!-- Student Login -->
+        <div class="tab-pane fade show active" id="studentLogin">
+          <form id="loginForm" novalidate>
+            <div class="mb-3">
+              <label class="form-label">Email / Student ID</label>
+              <div class="input-icon-wrap"><i class="fa-solid fa-envelope"></i><input type="email" class="form-control" placeholder="you@university.edu" required></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <div class="input-icon-wrap"><i class="fa-solid fa-lock"></i><input type="password" class="form-control" placeholder="Enter your password" required><button type="button" class="toggle-password"><i class="fa-solid fa-eye"></i></button></div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <div class="form-check"><input class="form-check-input" type="checkbox" id="remember"><label class="form-check-label small" for="remember">Remember me</label></div>
+              <a href="forgot-password.html" class="small forgot-link">Forgot Password?</a>
+            </div>
+            <button type="submit" class="btn btn-brand w-100"><i class="fa-solid fa-right-to-bracket"></i> Sign In</button>
+          </form>
+        </div>
+        <!-- Admin Login -->
+        <div class="tab-pane fade" id="adminLogin">
+          <form novalidate>
+            <div class="mb-3">
+              <label class="form-label">Admin Email</label>
+              <div class="input-icon-wrap"><i class="fa-solid fa-user-shield"></i><input type="email" class="form-control" placeholder="admin@lostfound.edu" required></div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label">Password</label>
+              <div class="input-icon-wrap"><i class="fa-solid fa-lock"></i><input type="password" class="form-control" placeholder="Enter admin password" required></div>
+            </div>
+            <button type="submit" class="btn btn-brand w-100"><i class="fa-solid fa-right-to-bracket"></i> Admin Sign In</button>
+          </form>
+        </div>
+      </div>
+
+      <p class="text-center mt-4 small text-muted-light">Don't have an account? <a href="register.html" class="forgot-link">Create one now</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/validation.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Account | LOST&FOUND</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="loader" id="loader"><div class="loader-ring"></div></div>
+
+<div class="auth-topbar">
+  <a href="index.html" class="navbar-brand"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></a>
+  <div class="d-flex align-items-center gap-3">
+    <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    <button class="icon-btn" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</div>
+
+<div class="auth-wrapper">
+  <div class="auth-visual d-none d-lg-flex">
+    <i class="fa-solid fa-id-card auth-float-icon fi1"></i>
+    <i class="fa-solid fa-book auth-float-icon fi2"></i>
+    <i class="fa-solid fa-headphones auth-float-icon fi3"></i>
+    <div class="auth-visual-content text-center">
+      <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=500&q=80" class="img-fluid rounded-4 mb-4" alt="Join us">
+      <h2>Join The Community</h2>
+      <p>Create your free account to report lost items and help reunite belongings with owners.</p>
+    </div>
+  </div>
+
+  <div class="auth-form-panel d-flex align-items-center justify-content-center">
+    <div class="auth-card glass-card p-4 p-md-5">
+      <div class="text-center mb-4">
+        <div class="icon-badge mx-auto"><i class="fa-solid fa-user-plus"></i></div>
+        <h1 class="h3 mt-3">Create Account</h1>
+        <p class="text-muted-light">Get started with Lost & Found in seconds</p>
+      </div>
+
+      <form id="registerForm" novalidate>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Full Name</label>
+            <div class="input-icon-wrap"><i class="fa-solid fa-user"></i><input type="text" class="form-control" placeholder="John Doe" required></div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Student ID</label>
+            <div class="input-icon-wrap"><i class="fa-solid fa-id-badge"></i><input type="text" class="form-control" placeholder="STU-2026-001" required></div>
+          </div>
+        </div>
+
+        <div class="mb-3 mt-3">
+          <label class="form-label">Email Address</label>
+          <div class="input-icon-wrap"><i class="fa-solid fa-envelope"></i><input type="email" id="regEmail" class="form-control" placeholder="you@university.edu" required></div>
+          <div class="field-msg" id="emailMsg"></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Phone Number</label>
+          <div class="input-icon-wrap"><i class="fa-solid fa-phone"></i><input type="tel" class="form-control" placeholder="+91 98765 43210" required></div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <div class="input-icon-wrap"><i class="fa-solid fa-lock"></i><input type="password" id="regPassword" class="form-control password-strength-input" data-meter="strengthMeter" data-label="strengthLabel" placeholder="Create a password" required><button type="button" class="toggle-password"><i class="fa-solid fa-eye"></i></button></div>
+          <div class="strength-meter" id="strengthMeter"><div></div><div></div><div></div><div></div></div>
+          <span class="strength-label" id="strengthLabel">Use 8+ characters with letters, numbers & symbols</span>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Confirm Password</label>
+          <div class="input-icon-wrap"><i class="fa-solid fa-lock"></i><input type="password" class="form-control confirm-password-input" data-match="regPassword" placeholder="Re-enter your password" required></div>
+          <div class="field-msg"></div>
+        </div>
+
+        <div class="form-check mb-4">
+          <input class="form-check-input" type="checkbox" id="agreeTerms">
+          <label class="form-check-label small" for="agreeTerms">I agree to the <a href="terms.html" class="forgot-link">Terms & Privacy Policy</a></label>
+        </div>
+
+        <button type="submit" class="btn btn-brand w-100"><i class="fa-solid fa-user-plus"></i> Create Account</button>
+      </form>
+
+      <p class="text-center mt-4 small text-muted-light">Already have an account? <a href="login.html" class="forgot-link">Sign in</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script src="js/validation.js"></script>
+</body>
+</html>
