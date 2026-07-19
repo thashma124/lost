@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Lost & Found Management System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ===== ABOUT PAGE SPECIFIC STYLES ===== */
+  :root {
+    --royal-blue: #2563EB;
+    --purple: #7C3AED;
+    --white: #FFFFFF;
+    --light-gray: #F1F5F9;
+    --gradient-brand: linear-gradient(135deg, var(--royal-blue), var(--purple));
+  }
+
+  /* ---- About Hero ---- */
+  .about-hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(circle at 20% 20%, rgba(37,99,235,0.15), transparent 55%),
+                radial-gradient(circle at 80% 80%, rgba(124,58,237,0.15), transparent 55%),
+                var(--bg);
+    padding: 140px 0 80px;
+  }
+  .about-hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .about-hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600;
+    color: var(--purple); background: rgba(124,58,237,0.12); margin-bottom: 20px;
+  }
+  .about-hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 800; line-height: 1.15; margin-bottom: 20px;
+  }
+  .about-hero p.lead {
+    color: var(--text-muted); font-size: 1.1rem; line-height: 1.8; margin-bottom: 30px; max-width: 520px;
+  }
+  .about-hero-visual {
+    position: relative; height: 380px; border-radius: 24px; overflow: hidden;
+    background: var(--gradient-brand);
+  }
+  .about-hero-visual img {
+    width: 100%; height: 100%; object-fit: cover; opacity: 0.85; mix-blend-mode: luminosity;
+  }
+  .about-float-card {
+    position: absolute; padding: 14px 20px; border-radius: 14px; display: flex;
+    align-items: center; gap: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+    animation: aboutFloat 4s ease-in-out infinite;
+  }
+  .about-float-card.c1 { top: 20px; left: -20px; animation-delay: 0s; }
+  .about-float-card.c2 { bottom: 30px; right: -20px; animation-delay: 1.2s; }
+  .about-float-card i { font-size: 1.3rem; color: var(--royal-blue); }
+  .about-float-card strong { display: block; font-size: 0.95rem; }
+  .about-float-card span { font-size: 0.75rem; color: var(--text-muted); }
+  @keyframes aboutFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+  /* ---- Mission / Vision ---- */
+  .mv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; }
+  .mv-card { padding: 36px; transition: var(--transition); position: relative; overflow: hidden; }
+  .mv-card:hover { transform: translateY(-8px); border-color: var(--purple); }
+  .mv-icon {
+    width: 60px; height: 60px; border-radius: 16px; background: var(--gradient-brand);
+    display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: #fff; margin-bottom: 20px;
+  }
+  .mv-card h3 { font-size: 1.3rem; margin-bottom: 12px; }
+  .mv-card p { color: var(--text-muted); line-height: 1.75; }
+
+  /* ---- How It Works ---- */
+  .steps-wrap { position: relative; }
+  .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .step-card { padding: 30px 24px; text-align: center; position: relative; transition: var(--transition); }
+  .step-card:hover { transform: translateY(-8px); border-color: var(--royal-blue); }
+  .step-num {
+    width: 44px; height: 44px; border-radius: 50%; background: var(--gradient-brand); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-weight: 700; margin: 0 auto 16px;
+  }
+  .step-card i.step-icon { font-size: 1.6rem; color: var(--purple); margin-bottom: 14px; display: block; }
+  .step-card h4 { font-size: 1.05rem; margin-bottom: 8px; }
+  .step-card p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.6; }
+  .step-arrow {
+    position: absolute; top: 50%; right: -20px; transform: translateY(-50%);
+    color: var(--text-muted); font-size: 1.2rem; opacity: 0.5;
+  }
+
+  /* ---- Why Choose Us ---- */
+  .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .why-card { padding: 28px; display: flex; gap: 16px; align-items: flex-start; transition: var(--transition); }
+  .why-card:hover { transform: translateY(-6px); border-color: var(--royal-blue); }
+  .why-icon {
+    min-width: 48px; height: 48px; border-radius: 12px; background: rgba(37,99,235,0.12);
+    display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--royal-blue);
+  }
+  .why-card h4 { font-size: 1rem; margin-bottom: 6px; }
+  .why-card p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+
+  /* ---- Impact Stats ---- */
+  .impact-section {
+    background: var(--gradient-brand); border-radius: 28px; padding: 60px 40px;
+    position: relative; overflow: hidden; margin: 0 24px;
+  }
+  .impact-section::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.15), transparent 60%);
+  }
+  .impact-grid {
+    position: relative; z-index: 1; display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 20px; text-align: center; color: #fff;
+  }
+  .impact-grid h3 { font-size: 2.4rem; font-weight: 800; }
+  .impact-grid p { opacity: 0.9; font-size: 0.9rem; margin-top: 6px; }
+
+  /* ---- Team ---- */
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .team-card { padding: 26px; text-align: center; transition: var(--transition); }
+  .team-card:hover { transform: translateY(-8px); border-color: var(--purple); }
+  .team-card img {
+    width: 90px; height: 90px; border-radius: 50%; margin: 0 auto 16px; object-fit: cover;
+    border: 3px solid transparent; background: var(--gradient-brand); padding: 3px; background-clip: content-box, border-box;
+  }
+  .team-card h4 { font-size: 1rem; margin-bottom: 4px; }
+  .team-card span { color: var(--purple); font-size: 0.82rem; display: block; margin-bottom: 14px; }
+  .team-socials { display: flex; justify-content: center; gap: 10px; }
+  .team-socials a {
+    width: 32px; height: 32px; border-radius: 50%; background: var(--card-bg); border: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: center; font-size: 0.8rem; transition: var(--transition);
+  }
+  .team-socials a:hover { background: var(--gradient-brand); color: #fff; }
+
+  /* ---- FAQ Accordion ---- */
+  .faq-wrap { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+  .faq-item { overflow: hidden; transition: var(--transition); }
+  .faq-question {
+    padding: 20px 26px; display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer; font-weight: 600; font-size: 0.98rem;
+  }
+  .faq-question i { color: var(--purple); transition: transform 0.3s ease; }
+  .faq-item.active .faq-question i { transform: rotate(180deg); }
+  .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; padding: 0 26px; }
+  .faq-item.active .faq-answer { max-height: 200px; padding-bottom: 20px; }
+  .faq-answer p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.7; }
+
+  /* ---- CTA Banner ---- */
+  .about-cta {
+    text-align: center; padding: 70px 24px; margin: 0 24px; border-radius: 28px;
+  }
+  .about-cta h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); margin-bottom: 14px; }
+  .about-cta p { color: var(--text-muted); margin-bottom: 30px; max-width: 500px; margin-inline: auto; }
+  .about-cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 992px) {
+    .about-hero-grid { grid-template-columns: 1fr; text-align: center; }
+    .about-hero p.lead { margin-inline: auto; }
+    .about-hero-visual { order: -1; height: 280px; }
+    .mv-grid, .why-grid { grid-template-columns: 1fr; }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .impact-grid { grid-template-columns: repeat(2, 1fr); }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .step-arrow { display: none; }
+  }
+  @media (max-width: 576px) {
+    .steps-grid, .impact-grid, .team-grid { grid-template-columns: 1fr; }
+    .about-float-card { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader" id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-text">LOST<span>&FOUND</span></div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="index.html#lost-items">Lost Items</a>
+      <a href="index.html#found-items">Found Items</a>
+      <a href="index.html#report">Report Item</a>
+      <a href="index.html#faq">FAQs</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
+      <button class="btn btn-outline nav-login">Login</button>
+      <button class="btn btn-primary nav-register">Register</button>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Sidebar -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+<aside class="mobile-sidebar" id="mobileSidebar">
+  <div class="sidebar-header">
+    <span class="logo"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></span>
+    <button id="sidebarClose"><i class="fa-solid fa-xmark"></i></button>
+  </div>
+  <nav class="sidebar-links">
+    <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+    <a href="index.html#lost-items"><i class="fa-solid fa-box-open"></i> Lost Items</a>
+    <a href="index.html#found-items"><i class="fa-solid fa-hand-holding-heart"></i> Found Items</a>
+    <a href="index.html#report"><i class="fa-solid fa-flag"></i> Report Item</a>
+    <a href="index.html#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+  </nav>
+  <div class="sidebar-actions">
+    <button class="btn btn-outline full">Login</button>
+    <button class="btn btn-primary full">Register</button>
+  </div>
+</aside>
+
+<!-- About Hero -->
+<section class="about-hero">
+  <div class="container about-hero-grid">
+    <div class="about-hero-text">
+      <span class="about-hero-badge reveal"><i class="fa-solid fa-star"></i> Trusted by 5,000+ Students</span>
+      <h1 class="reveal">Reuniting People With What Matters <span class="gradient-text">Most</span></h1>
+      <p class="lead reveal">
+        The Lost & Found Management System is a secure, campus-wide platform built to help students
+        and staff report, track, and recover lost belongings quickly — replacing lost notice boards
+        with a smart, verified digital process.
+      </p>
+      <div class="hero-buttons reveal">
+        <button class="btn btn-primary btn-lg"><i class="fa-solid fa-box-open"></i> Report Lost Item</button>
+        <button class="btn btn-outline btn-lg"><i class="fa-solid fa-hand-holding-heart"></i> Report Found Item</button>
+      </div>
+    </div>
+    <div class="about-hero-visual reveal">
+      <img src="https://images.unsplash.com/photo-1584824486539-53bb4646bfdf?w=700&q=80" alt="Lost and found items">
+      <div class="about-float-card glass c1">
+        <i class="fa-solid fa-circle-check"></i>
+        <div><strong>1,240+</strong><span>Items Returned</span></div>
+      </div>
+      <div class="about-float-card glass c2">
+        <i class="fa-solid fa-shield-halved"></i>
+        <div><strong>100% Secure</strong><span>Verified Claims</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mission & Vision -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Our Purpose</span>
+      <h2>Mission & <span class="gradient-text">Vision</span></h2>
+      <p>Built on trust, speed, and community care</p>
+    </div>
+    <div class="mv-grid">
+      <div class="mv-card glass reveal">
+        <div class="mv-icon"><i class="fa-solid fa-bullseye"></i></div>
+        <h3>Our Mission</h3>
+        <p>
+          To provide every student and staff member with a fast, transparent, and reliable way to
+          report and recover lost belongings — reducing stress, saving time, and building a
+          culture of honesty and mutual support across campus.
+        </p>
+      </div>
+      <div class="mv-card glass reveal">
+        <div class="mv-icon"><i class="fa-solid fa-eye"></i></div>
+        <h3>Our Vision</h3>
+        <p>
+          To become the standard digital lost-and-found infrastructure for every institution —
+          where no lost item goes unclaimed, verification is instant, and honest finders are
+          always recognized and appreciated.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section section-alt">
+  <div class="container steps-wrap">
+    <div class="section-header">
+      <span class="tag">Simple Process</span>
+      <h2>How It <span class="gradient-text">Works</span></h2>
+      <p>From report to recovery in four easy steps</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card glass reveal">
+        <div class="step-num">1</div>
+        <i class="fa-solid fa-file-pen step-icon"></i>
+        <h4>Report an Item</h4>
+        <p>Submit details of a lost or found item with photos, location, and date in minutes.</p>
+        <i class="fa-solid fa-arrow-right step-arrow"></i>
+      </div>
+      <div class="step-card glass reveal">
+        <div class="step-num">2</div>
+        <i class="fa-solid fa-magnifying-glass step-icon"></i>
+        <h4>Smart Matching</h4>
+        <p>Our system automatically matches lost reports with found item listings by category.</p>
+        <i class="fa-solid fa-arrow-right step-arrow"></i>
+      </div>
+      <div class="step-card glass reveal">
+        <div class="step-num">3</div>
+        <i class="fa-solid fa-shield-halved step-icon"></i>
+        <h4>Verify Ownership</h4>
+        <p>Claim requests are verified using OTP, Student ID, or security questions for safety.</p>
+        <i class="fa-solid fa-arrow-right step-arrow"></i>
+      </div>
+      <div class="step-card glass reveal">
+        <div class="step-num">4</div>
+        <i class="fa-solid fa-handshake step-icon"></i>
+        <h4>Item Returned</h4>
+        <p>Once verified, arrange a secure pickup and the item is marked as returned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Why Choose Us</span>
+      <h2>Built For <span class="gradient-text">Trust & Speed</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card glass reveal">
+        <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div><h4>Fast Recovery</h4><p>Average item recovery time is reduced from days to hours with smart matching.</p></div>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon"><i class="fa-solid fa-lock"></i></div>
+        <div><h4>Secure Claims</h4><p>Multi-step verification prevents false claims and protects genuine owners.</p></div>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon"><i class="fa-solid fa-bell"></i></div>
+        <div><h4>Instant Alerts</h4><p>Get notified via email and SMS the moment a matching item is found.</p></div>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <div><h4>Mobile Friendly</h4><p>Report, track, and claim items seamlessly from any device, anywhere.</p></div>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon"><i class="fa-solid fa-chart-line"></i></div>
+        <div><h4>Transparent Tracking</h4><p>Track your report status in real time — from submitted to returned.</p></div>
+      </div>
+      <div class="why-card glass reveal">
+        <div class="why-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <div><h4>Admin Oversight</h4><p>Every claim is reviewed and approved through a dedicated admin dashboard.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Impact Stats -->
+<section class="section">
+  <div class="container">
+    <div class="impact-section">
+      <div class="impact-grid">
+        <div><h3 class="counter" data-target="5200">0</h3><p>Registered Users</p></div>
+        <div><h3 class="counter" data-target="1840">0</h3><p>Items Reported</p></div>
+        <div><h3 class="counter" data-target="1240">0</h3><p>Items Returned</p></div>
+        <div><h3 class="counter" data-target="98">0</h3><p>% Satisfaction Rate</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Meet The Team</span>
+      <h2>The People Behind <span class="gradient-text">LOST&FOUND</span></h2>
+    </div>
+    <div class="team-grid">
+      <div class="team-card glass reveal">
+        <img src="https://randomuser.me/api/portraits/men/41.jpg" alt="Team member">
+        <h4>Aditya Rao</h4>
+        <span>Founder & Lead Developer</span>
+        <div class="team-socials"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-github"></i></a></div>
+      </div>
+      <div class="team-card glass reveal">
+        <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Team member">
+        <h4>Sneha Iyer</h4>
+        <span>UI/UX Designer</span>
+        <div class="team-socials"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-dribbble"></i></a></div>
+      </div>
+      <div class="team-card glass reveal">
+        <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Team member">
+        <h4>Karan Mehta</h4>
+        <span>Backend Engineer</span>
+        <div class="team-socials"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-github"></i></a></div>
+      </div>
+      <div class="team-card glass reveal">
+        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team member">
+        <h4>Priya Nair</h4>
+        <span>Campus Coordinator</span>
+        <div class="team-socials"><a href="#"><i class="fa-brands fa-linkedin-in"></i></a><a href="#"><i class="fa-brands fa-envelope"></i></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <span class="tag">Got Questions?</span>
+      <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+    </div>
+    <div class="faq-wrap" id="faqWrap">
+      <div class="faq-item glass">
+        <div class="faq-question">How do I report a lost item? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>Click "Report Lost Item" on the homepage, fill in your details and item description, and submit. You'll get updates as soon as a match is found.</p></div>
+      </div>
+      <div class="faq-item glass">
+        <div class="faq-question">How is my claim verified? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>Claims go through OTP verification, Student ID confirmation, or security questions before an item is released to ensure it reaches the rightful owner.</p></div>
+      </div>
+      <div class="faq-item glass">
+        <div class="faq-question">Is there a reward for returning items? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>While rewards aren't mandatory, finders are recognized on their profile and can receive appreciation points redeemable for campus perks.</p></div>
+      </div>
+      <div class="faq-item glass">
+        <div class="faq-question">What happens if no one claims a found item? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>Unclaimed items are held for 60 days, after which they're handed over to the campus administration office per policy.</p></div>
+      </div>
+      <div class="faq-item glass">
+        <div class="faq-question">Is my personal information kept private? <i class="fa-solid fa-chevron-down"></i></div>
+        <div class="faq-answer"><p>Yes. Contact details are only shared between matched parties after claim verification is approved, in line with our Privacy Policy.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section">
+  <div class="container">
+    <div class="about-cta glass">
+      <h2>Lost Something? <span class="gradient-text">We'll Help You Find It.</span></h2>
+      <p>Join thousands of students already using LOST&FOUND to recover their belongings safely and quickly.</p>
+      <div class="about-cta-buttons">
+        <button class="btn btn-primary btn-lg"><i class="fa-solid fa-box-open"></i> Report Lost Item</button>
+        <button class="btn btn-outline btn-lg"><i class="fa-solid fa-hand-holding-heart"></i> Report Found Item</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <span class="logo"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></span>
+      <p>A secure campus platform helping students recover their valuable belongings quickly and easily.</p>
+      <div class="social-links">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="index.html#lost-items">Lost Items</a><a href="index.html#found-items">Found Items</a>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="index.html#contact">Contact</a><a href="#faq">FAQs</a><a href="#">Privacy Policy</a><a href="#">Terms & Conditions</a>
+    </div>
+    <div class="footer-col">
+      <h4>Newsletter</h4>
+      <p>Get updates on new found items in your category.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" placeholder="Your email" required>
+        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+      </form>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Lost & Found Management System. All rights reserved.</p>
+  </div>
+</footer>
+
+<div class="fab-container">
+  <button class="scroll-top" id="scrollTop"><i class="fa-solid fa-arrow-up"></i></button>
+</div>
+
+<script src="script.js"></script>
+<script>
+  // FAQ accordion toggle (About page specific)
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      document.querySelectorAll('.faq-item').forEach(i => { if (i !== item) i.classList.remove('active'); });
+      item.classList.toggle('active');
+    });
+  });
+</script>
+</body>
+</html>
