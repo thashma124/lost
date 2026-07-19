@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify OTP | Lost & Found Management System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<div class="loader" id="loader">
+  <div class="loader-ring"></div>
+  <div class="loader-text">LOST<span>&FOUND</span></div>
+</div>
+
+<div class="toast-container" id="toastContainer"></div>
+
+<div class="auth-topbar">
+  <a href="index.html" class="logo"><i class="fa-solid fa-magnifying-glass-location"></i> LOST<span>&FOUND</span></a>
+  <div style="display:flex; align-items:center; gap:16px;">
+    <a href="login.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to Login</a>
+    <button class="icon-btn" id="themeToggle"><i class="fa-solid fa-moon"></i></button>
+  </div>
+</div>
+
+<div class="auth-wrapper">
+  <div class="auth-visual">
+    <i class="fa-solid fa-mobile-screen-button auth-float-icon fi1"></i>
+    <i class="fa-solid fa-shield-halved auth-float-icon fi2"></i>
+    <i class="fa-solid fa-comment-sms auth-float-icon fi3"></i>
+    <i class="fa-solid fa-fingerprint auth-float-icon fi4"></i>
+    <div class="auth-visual-content">
+      <img src="https://images.unsplash.com/photo-1633265486064-086b219458ec?w=500&q=80" alt="Verification" style="border-radius:20px;">
+      <h2>Secure Verification</h2>
+      <p>We use multi-factor verification — OTP, Student ID, and security questions — to keep every claim safe and genuine.</p>
+    </div>
+  </div>
+
+  <div class="auth-form-panel">
+    <div class="auth-card glass">
+
+      <div id="otpFormWrap">
+        <div class="progress-steps">
+          <div class="progress-step done"><i class="fa-solid fa-check"></i></div>
+          <div class="progress-line done"></div>
+          <div class="progress-step active">2</div>
+          <div class="progress-line"></div>
+          <div class="progress-step">3</div>
+        </div>
+
+        <div class="auth-header">
+          <div class="auth-icon-badge"><i class="fa-solid fa-shield-halved"></i></div>
+          <h1>Verify OTP</h1>
+          <p>Enter the 6-digit code sent to <strong>j***e@university.edu</strong></p>
+        </div>
+
+        <!-- Verification method choice -->
+        <div class="verify-methods">
+          <div class="verify-method selected">
+            <div class="verify-method-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div class="verify-method-text"><h4>Email OTP</h4><p>Sent to j***e@university.edu</p></div>
+            <div class="verify-method-radio"></div>
+          </div>
+          <div class="verify-method">
+            <div class="verify-method-icon"><i class="fa-solid fa-comment-sms"></i></div>
+            <div class="verify-method-text"><h4>SMS OTP</h4><p>Sent to +91 98***43210</p></div>
+            <div class="verify-method-radio"></div>
+          </div>
+          <div class="verify-method">
+            <div class="verify-method-icon"><i class="fa-solid fa-qrcode"></i></div>
+            <div class="verify-method-text"><h4>QR Code</h4><p>Scan with campus ID app</p></div>
+            <div class="verify-method-radio"></div>
+          </div>
+        </div>
+
+        <form id="otpForm">
+          <div class="otp-group">
+            <input type="text" maxlength="1" inputmode="numeric" autofocus>
+            <input type="text" maxlength="1" inputmode="numeric">
+            <input type="text" maxlength="1" inputmode="numeric">
+            <input type="text" maxlength="1" inputmode="numeric">
+            <input type="text" maxlength="1" inputmode="numeric">
+            <input type="text" maxlength="1" inputmode="numeric">
+          </div>
+          <p class="otp-timer">Code expires in <span id="otpTimer">00:45</span> &nbsp;|&nbsp; <span class="resend-link" id="resendOtp">Resend OTP</span></p>
+
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-circle-check"></i> Verify Code</button>
+        </form>
+      </div>
+
+      <!-- Success -->
+      <div id="otpSuccess" style="display:none;">
+        <div class="success-state">
+          <div class="success-icon"><i class="fa-solid fa-check-double"></i></div>
+          <h2>Verified Successfully</h2>
+          <p>Your identity has been confirmed. You may now proceed to reset your password or complete your claim.</p>
+          <a href="reset-password.html"><button class="btn btn-primary"><i class="fa-solid fa-arrow-right"></i> Continue</button></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="auth.js"></script>
+</body>
+</html>
